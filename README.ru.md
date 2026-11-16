@@ -10,7 +10,7 @@
 
 Техника: `OpenProcess` → `VirtualAllocEx` → `WriteProcessMemory` → `CreateRemoteThread(LoadLibraryA)` → `GetExitCodeThread`.
 
-📖 **Полный гайд по использованию:** [docs/USAGE.ru.md](docs/USAGE.ru.md) · [in English](docs/USAGE.md)
+📖 **Полный гайд по использованию:**[USAGE.md](USAGE.md) · [русская версия](USAGE.ru.md)
 
 ---
 
