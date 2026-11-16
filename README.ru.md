@@ -10,7 +10,7 @@
 
 Техника: `OpenProcess` → `VirtualAllocEx` → `WriteProcessMemory` → `CreateRemoteThread(LoadLibraryA)` → `GetExitCodeThread`.
 
-📖 **Полный гайд по использованию:**[USAGE.md](USAGE.md) · [русская версия](USAGE.ru.md)
+📖 **Полный гайд по использованию:** [USAGE.ru.md](USAGE.ru.md) · [in English](USAGE.md)
 
 ---
 
@@ -111,4 +111,32 @@ target = notepad.exe
 - Имя DLL и таймаут 15 с **захардкожены**.
 - **Таймаут ≠ отмена** — загрузка может завершиться уже после того, как инжектор сдался.
 - Не работает против protected/PPL-процессов, политики «только Microsoft-signed DLL» и целей под античитом/EDR.
-- `
+- `SeDebugPrivilege` не включается.
+
+## Планы
+
+- [ ] Ключи `dll=` и `timeout=` в конфиге
+- [ ] CLI-аргументы (`--pid`, `--name`, `--dll`, `--no-pause`) и quiet-режим
+- [ ] Включение `SeDebugPrivilege`
+- [ ] Проверка битности цели через `IsWow64Process2`
+- [ ] Полный Unicode: `LoadLibraryW` + W-API по всему коду
+- [ ] Лог в файл, опциональная выгрузка (`FreeLibrary`)
+- [ ] RAII-обёртки для хэндлов и удалённой памяти
+
+## Структура репозитория
+
+```
+.
+├── CodeInjector.cpp      # инжектор
+├── Inject.cpp            # демо-DLL (MessageBox при загрузке)
+├── CodeInjectcfg.cfg     # опциональный конфиг
+├── README.md
+├── README.ru.md
+├── USAGE.md
+├── USAGE.ru.md
+└── LICENSE
+```
+
+## Лицензия
+
+MIT — см. [LICENSE](LICENSE).
