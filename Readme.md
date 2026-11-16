@@ -10,7 +10,7 @@ Classic **x64 DLL injector** — pure WinAPI, one translation unit, zero externa
 
 Technique: `OpenProcess` → `VirtualAllocEx` → `WriteProcessMemory` → `CreateRemoteThread(LoadLibraryA)` → `GetExitCodeThread`.
 
-📖 **Full usage guide:** [docs/USAGE.md](docs/USAGE.md) · [русская версия](docs/USAGE.ru.md)
+📖 **Full usage guide:** [USAGE.md](USAGE.md) · [русская версия](USAGE.ru.md)
 
 ---
 
